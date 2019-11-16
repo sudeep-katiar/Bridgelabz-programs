@@ -2,16 +2,16 @@ package com.bridgelabz_programs.dataStructure;
 
 ////an ordered collection of items which are added at one end called the rear
 //and removed from the other end called the front
-public class Queue {
+public class Queue<T> {
 	int queue[] = new int[99999999];
 	int size;
 	int front;
 	int rear;
 	
 	//adds a new element to the rear of the queue
-	public void enqueue(int data)
+	public void enqueue(T data)
 	{
-		queue[rear] = data;
+		queue[rear] = (int) data;
 		rear = rear + 1;
 		size++;
 	}
@@ -44,8 +44,16 @@ public class Queue {
 	}
 	
 	
+	
 	public static void main(String[] args) {
 		
 	}
+
+//	public void display() {
+//		int node = this.front;
+//		while(node!=0) {
+//			System.out.println("Data :");
+//		}
+//	}
 
 }

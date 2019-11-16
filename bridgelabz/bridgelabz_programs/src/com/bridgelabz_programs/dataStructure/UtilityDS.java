@@ -1,5 +1,7 @@
 package com.bridgelabz_programs.dataStructure;
-
+/*
+ * Utility file for data structure
+ */
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -103,7 +105,7 @@ public class UtilityDS {
 	/**
 	 * Takes input with the user via Scanner for String
 	 * 
-	 * @return INPUT STRING
+	 *  INPUT STRING
 	 */
 	public String inputString() {
 		try {
@@ -117,7 +119,7 @@ public class UtilityDS {
 	/**
 	 * Takes input with the user via Scanner for StringLine
 	 * 
-	 * @return INPUT STRING LINE
+	 *  INPUT STRING LINE
 	 */
 	public String inputStringLine() {
 		try {
@@ -131,7 +133,7 @@ public class UtilityDS {
 	/**
 	 * Takes input with the user via Scanner for Integer
 	 * 
-	 * @return INPUT INTEGER
+	 *  INPUT INTEGER
 	 */
 	public int inputInteger() {
 		try {
@@ -145,7 +147,7 @@ public class UtilityDS {
 	/**
 	 * Takes input with the user via Scanner for Double
 	 * 
-	 * @return INPUT DOUBLE
+	 *  INPUT DOUBLE
 	 */
 	public double inputDouble() {
 		try {
@@ -159,7 +161,7 @@ public class UtilityDS {
 	/**
 	 * Takes input with the user via Scanner for Boolean
 	 * 
-	 * @return INPUT BOOLEAN
+	 *  INPUT BOOLEAN
 	 */
 	public boolean inputBoolean() {
 		try {
@@ -171,9 +173,9 @@ public class UtilityDS {
 	}
 	/*
 	 * Function to find power of 2
-	 * @param type number
 	 * 
-	 * @return integer
+	 * 
+	 * @ integer
 	 * 
 	 * */
 	public int[] power(int n) {
@@ -188,9 +190,9 @@ public class UtilityDS {
 	}
 	/*
 	 * Function to compute 1/1 + 1/2 + 1/3 + ... + 1/N
-	 * @param type number 
+	 *  
 	 * 
-	 * @return float
+	 *  float
 	 * 
 	 * */
 	
@@ -218,6 +220,8 @@ public class UtilityDS {
 			}
 		}
 	}
+	
+	/*Swapping of String*/
 	public static String swap(String str,int i,int j)
 	{
 		char temp;
@@ -229,8 +233,8 @@ public class UtilityDS {
 	}
 	
 	/*
-	 * @param data - Take integer type data
-	 * @return - list of data
+	 *  Take integer type data
+	 *  list of data
 	 * 
 	 * */
 	public ArrayList<String> getGeneratedCoupon(int n) {
@@ -257,8 +261,8 @@ public class UtilityDS {
 	}
 	/*
 	 * function to perform binary search
-	 * @param type string
-	 * @return boolean
+	 * 
+	 *  boolean
 	 * 
 	 * */
 	public static boolean binarySearch(String[] arr,String name) {
@@ -281,8 +285,8 @@ public class UtilityDS {
 	
 	/*
 	 * function to perform bubble sort
-	 * @param type string array
-	 * @return string array
+	 * 
+	 *  string array
 	 * 
 	 * */
 	public String[] bubbleSort(String[] array) {
@@ -300,8 +304,8 @@ public class UtilityDS {
 
 	/*
 	 * function to perform insertion sort
-	 * @param type string array
-	 * @return string array
+	 *
+	 *  string array
 	 * 
 	 * */
 	public String[] insertionSort(String[] arr) {
@@ -322,8 +326,8 @@ public class UtilityDS {
 	
 	/*
 	 * function to divide the array
-	 * @param type array
-	 * @return array
+	 * 
+	 * array
 	 * 
 	 * */
 	public int[] mergeSort(int[] array) {
@@ -360,8 +364,8 @@ public class UtilityDS {
 	
 	/*
 	 * function to merge two array
-	 * @param type array
-	 * @return array
+	 *
+	 *  array
 	 * 
 	 * */
 	private int[] merge(int[] left, int[] right) {
@@ -399,27 +403,33 @@ public class UtilityDS {
 	/**
 	 * Prints calendar of a month taking month and year as input
 	 * 
-	 * @param month
-	 * @param year
 	 */
 	public  void calender(int month, int year) {
 		int year1; 
 		int month1, x, day = 1, day1;
+		//to find year
 		year1 = year - (14 - month) / 12;
 		x = year1 + (year1 / 4) - (year1 / 100) + (year1 / 400);
+		//to find month
 		month1 = month + 12 * ((14 - month) / 12) - 2;
+		//to find days
 		day1 = (day + x + (31 * month1) / 12) % 7;
+		
 		String[] monthName = { "January", "February", "March", "April", "May", "June", "July", "August", "September",
 				"October", "November", "December" };
+		
 		int[] monthDays = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 		int monthDay = 0;
+		
 		for (int i = 0; i < monthDays.length; i++) {
 			if (i == month - 1) {
 				monthDay = monthDays[i];
 			}
 		}
 		int[][] totalDays = new int[6][7];
+		//to check leap year
 		boolean leap = leapYear(year);
+		
 		if (leap && month == 1) {
 			monthDay = 29;
 		}
@@ -464,8 +474,8 @@ public class UtilityDS {
 	/**
 	 * Finding if a year is Leap Year or not
 	 * 
-	 * @param year
-	 * @return true if year is leap and false if year is not leap year
+	 *
+	 * return true if year is leap and false if year is not leap year
 	 */
 	public boolean leapYear(int year) {
 		if (year % 100 != 0 && year % 4 == 0) {
@@ -480,9 +490,7 @@ public class UtilityDS {
 	/**
 	 * Calculating calendar in 2D array
 	 * 
-	 * @param month
-	 * @param year
-	 * @return total number of days in the entered month and year
+	 *  total number of days in the entered month and year
 	 */
 	public int[][] calenderQueue(int month, int year) {
 		int year1, month1, x, day = 1, day1;
@@ -619,8 +627,8 @@ public class UtilityDS {
 		/*
 		 * Calculating the factorial of the given number
 		 * 
-		 * @param i
-		 * @return factorial of the given number
+		 * 
+		 *  factorial of the given number
 		 */
 		public static int factorial(double i)
 		{
@@ -634,8 +642,7 @@ public class UtilityDS {
 		}
 		
 		/**
-		 * @param range- up to which prime numbers are to be found
-		 * @returns string array of prime numbers in  a given range
+		 * string array of prime numbers in  a given range
 		 */
 		public String[] prime(int range) {
 			String[] array = new String[1000];
@@ -659,12 +666,5 @@ public class UtilityDS {
 			}
 			return returnArray;
 		}
-		
-		
-	
-	public static void PrimeAnagram()
-	{
-		
-	}
 
 }

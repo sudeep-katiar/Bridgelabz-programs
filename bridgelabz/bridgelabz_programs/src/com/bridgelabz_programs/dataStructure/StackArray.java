@@ -1,4 +1,7 @@
 package com.bridgelabz_programs.dataStructure;
+
+import com.bridgelabz_programs.dataStructure.Stack.Node;
+
 //adding and removing of item from top by using stack array method
 public class StackArray<T> {
 	char stack[] = new char [500];
@@ -35,4 +38,15 @@ public class StackArray<T> {
 	{
 		return top;
 	}
+//	public static String display() {
+//		Node<T> node = head;
+//		String temp="";
+//		
+//		while (node.next != null) {
+//			temp += node.data+" ";
+//			node = node.next;
+//		}
+//		temp += node.data;
+//		return temp;
+//	}
 }
