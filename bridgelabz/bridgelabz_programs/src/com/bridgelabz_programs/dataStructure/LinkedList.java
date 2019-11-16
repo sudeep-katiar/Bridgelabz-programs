@@ -11,11 +11,13 @@ public class LinkedList<T> {
 	{
 		//constructor
 		Node<T> next;
+		Node<T> pre;
 		T data;
 		Node()
 		{
-		this.data=data;
+		this.data = data;
 		next=null;
+		pre=null;
 		}
 	}
 	
@@ -46,12 +48,23 @@ public class LinkedList<T> {
 		}
 	}
 	
+	//adds an element at the first
+		public void insertAtFirst(T item)
+		{
+			Node<T> node=new Node<T>();
+			node.data=item;
+			node.next=null;
+			
+			node.next=head;
+			head=node;
+		}
+	
 			//search  method
 	public boolean search(T item)
 	{
 		int count=0;
 		Node<T> temp = head;
-		if(temp==null)
+		if(temp == null)
 		{
 			return false;
 		}
@@ -128,6 +141,23 @@ public class LinkedList<T> {
 		}
 		return size;
 	}
+	
+	//adds element from last to first
+	public void addLast(T item)
+	{
+		Node<T> node=new Node<T>();
+		node.data=item;
+		node.pre=null;
+		Node<T> temp=head;
+		while(temp.pre!=null)
+		{
+			node.pre=head;
+			node=head;
+			node.pre=null;
+		}
+		
+	}
+	
 	  //adds a new item to the end of the list
 	public void append(T item)
 	{
@@ -142,6 +172,8 @@ public class LinkedList<T> {
 		}
 		temp.next=n;
 	}
+	
+	
 		//returns the position of item from the list
 	public int index(T item)
 	{
@@ -187,6 +219,22 @@ public class LinkedList<T> {
 		temp.next=null;
 		return temp;
 	}
+	//removes the first item from the list
+	public void removeFirst()
+	{
+		if(head.next!=null)
+		{
+		Node<T> temp=head;
+		head=head.next;
+		temp=null;
+		}
+		else
+		{
+			head=null;
+			System.out.println("only one data was present");
+		}
+	}
+	
 	
 	//removes and return the item at position pos
 	public Node<T> pop(int pos)
@@ -301,10 +349,12 @@ public class LinkedList<T> {
 		Scanner sc = new Scanner(System.in);
 		LinkedList<Integer> n=new LinkedList();
 		n.add(20);
-		n.add(40);
-		n.add(60);
-		n.add(70);
-		n.add(80);
+//		n.add(40);
+//		n.add(60);
+//		n.add(70);
+//		n.add(80);
+		n.addLast(40);
+//		n.removeFirst();
 		n.display();
 		System.out.println();
 		int num = sc.nextInt();

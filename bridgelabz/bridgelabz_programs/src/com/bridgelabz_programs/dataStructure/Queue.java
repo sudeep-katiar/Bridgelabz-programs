@@ -3,7 +3,7 @@ package com.bridgelabz_programs.dataStructure;
 ////an ordered collection of items which are added at one end called the rear
 //and removed from the other end called the front
 public class Queue {
-	int queue[] = new int[5];
+	int queue[] = new int[99999999];
 	int size;
 	int front;
 	int rear;

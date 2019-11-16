@@ -14,10 +14,11 @@ public class CashCounter {
 		Scanner counter=new Scanner(System.in);
 		System.out.println("Enter the number of persons");
 		int per=counter.nextInt();
+		
 		boolean result=checkNumber(per);
 		if(result)
 		{
-				int cash=999999;
+				int cash=99999999;
 		//to put every person in a queue
 		for (int i = 0; i <per; i++) {
 			queue.enqueue(i);
