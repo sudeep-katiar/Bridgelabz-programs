@@ -5,7 +5,7 @@ public static void main(String[] args) {
 		
 		UtilityDS utility = new UtilityDS();
 		//	prime numbers array between 0 and 1000
-		String[] primeNumbers = utility.prime2DArr();
+		String[] primeNumbers = utility.prime(1000);
 		
 		System.out.println("Anagram and prime numbers are:");
 		//	prints prime numbers that are anagrams

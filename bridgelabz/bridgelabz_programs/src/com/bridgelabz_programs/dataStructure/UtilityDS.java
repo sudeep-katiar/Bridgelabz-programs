@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class UtilityDS {
-	public static String[] prime2DArr()
+	public static void prime2DArr()
 	{
 		int array[][] = new int [10][100];
 		int prime[][] = new int [10][100];
@@ -24,7 +24,7 @@ public class UtilityDS {
 		{
 			for(int j=0; j<100; j++)
 			{
-//				System.out.print(array[i][j]+" ");
+				System.out.print(array[i][j]+" ");
 				if(checkingPrime(array[i][j]))
 				{
 					prime[i][j] = array[i][j];
@@ -46,7 +46,7 @@ public class UtilityDS {
 			}
 			System.out.println();
 		}
-		return null;
+		return ;
 	}
 
 	private static boolean checkingPrime(int num) {
