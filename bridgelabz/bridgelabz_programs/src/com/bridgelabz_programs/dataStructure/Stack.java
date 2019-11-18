@@ -1,5 +1,7 @@
 package com.bridgelabz_programs.dataStructure;
-
+/*
+*linked list implement methods 
+**/
 public class Stack<T>
 {
 	Node<T> head;
