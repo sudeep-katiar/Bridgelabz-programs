@@ -50,7 +50,6 @@ public class QueueLL<T> {
 	 */
 	public void dequeue()
 	{
-		Node<T> temp=front;
 		if(front==null)
 		{
 			System.out.println("Queue is empty");

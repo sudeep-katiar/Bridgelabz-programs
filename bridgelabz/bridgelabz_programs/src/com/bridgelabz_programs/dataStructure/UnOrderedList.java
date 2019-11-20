@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 //collection of item where each item holds a relative position with respect to the others
 public class UnOrderedList {
+	@SuppressWarnings("resource")
 	public static void main(String[] args) throws IOException {
 		LinkedList<String> list = new LinkedList<String>();
 		FileReader fr = new FileReader("/home/admin1/bridgelabz/FileIO/abc1.txt");

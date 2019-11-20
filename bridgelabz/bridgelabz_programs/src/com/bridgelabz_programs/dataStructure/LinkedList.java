@@ -3,7 +3,7 @@ package com.bridgelabz_programs.dataStructure;
 import java.util.Scanner;
 //data structure linked list method
 public class LinkedList<T> {
-	int count=0;
+	int count = 0;
 	Node<T> head;
 	
 	//Node class
@@ -24,20 +24,20 @@ public class LinkedList<T> {
 	// Method to add a new node 
 	public void add(T item)
 	{
-		Node<T> node=new Node<T>();
-		node.data=item;
-		node.next=null;
+		Node<T> node = new Node<T>();
+		node.data = item;
+		node.next = null;
 		// If the Linked List is empty, then make the new node as head 
-		if(head==null)
+		if(head == null)
 		{
-			head=node;
+			head = node;
 			count++;
 		}
 		else
 		{
 			 // Else traverse till the last node 
             // and insert the new_node there 
-			Node<T> temp=head;
+			Node<T> temp = head;
 			while(temp.next!=null)
 			{
 				// Insert the new_node at last node 
@@ -269,13 +269,24 @@ public class LinkedList<T> {
 	//for storing the number in sorted way
 	public void serially(T item)
 	{
-		Node<T> node=new Node<T>();
-		node.data=item;
+		Node<T> node = new Node<T>();
+		node.data = item;
 		Node<T> temp=head;
-		int i=(int) item;
-		int j=(int)temp.data;
+		int i = (int) item;
+		int j = (int)temp.data;
 		System.out.println(i);
-			while(temp.next!=null)
+		
+		if(j>i)
+		{
+			node.next = null;
+			
+			node.next = head;
+			head = node;
+			
+		}
+		else
+		{
+		while(temp.next != null)
 			{
 				j = (int)temp.next.data;
 				if(j>i)
@@ -294,7 +305,7 @@ public class LinkedList<T> {
 			}
 			else if(temp.next==null)
 				add(item);
-			
+		}
 		}
 	
 	//to display the value
