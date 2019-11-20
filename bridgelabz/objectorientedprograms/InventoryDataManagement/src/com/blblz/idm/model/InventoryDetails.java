@@ -4,9 +4,14 @@ public class InventoryDetails {
 	private String name;
 	private double weight;
 	private double price;
+	
 	public String getName() {
 		return name;
 	}
+//	@Override
+//	public String toString() {
+//		return "InventoryDetails [name=" + name + ", weight=" + weight + ", price=" + price + "]";
+//	}
 	public void setName(String name) {
 		this.name = name;
 	}

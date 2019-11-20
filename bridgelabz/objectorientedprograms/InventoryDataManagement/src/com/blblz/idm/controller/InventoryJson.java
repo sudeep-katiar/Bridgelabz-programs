@@ -13,18 +13,21 @@ public class InventoryJson {
 		JSONObject obj = new JSONObject();
 		
 		JSONArray list = new JSONArray();
+
 		list.add("Name: Basmati");
 		list.add("Weight: 20kg");
 		list.add("Price: Rs500");
 		
-		obj.put("Rice", list);
+		obj.put("Rice", list.clone());
 		
+		list.clear();
 		list.add("Name: Dumur");
 		list.add("Weight: 3kg");
 		list.add("Price: Rs100");
 		
-		obj.put("Wheat", list);
+		obj.put("Wheat", list.clone());
 		
+		list.clear();
 		list.add("Name: Peas");
 		list.add("Weight: 5kg");
 		list.add("Price: Rs600");
@@ -33,7 +36,7 @@ public class InventoryJson {
 		
 		try(FileWriter file = new FileWriter("DataManagement.json"))
 		{
-			file.write(obj.toString());
+			file.write(obj.toJSONString());
 			file.flush();
 		}
 		catch(IOException e)
