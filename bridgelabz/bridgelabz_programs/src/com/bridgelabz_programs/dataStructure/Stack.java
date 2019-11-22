@@ -1,74 +1,76 @@
 package com.bridgelabz_programs.dataStructure;
 
-public class Stack<T>
-{
+public class Stack<T> {
 	Node<T> head;
-	int count=0;
-	
-	class Node<T>
-	{
-		Node<T> head;
+	int count = 0;
+
+	@SuppressWarnings("hiding")
+	class Node<T> {
 		public T data;
-		public Stack<T>.Node<T> next=null;
-		
+		Node<T> next;
+
+		Node(T data) {
+			this.data = data;
+		}
 	}
 
 	/**
-	 * Constructor creates an object of MyLinkedList and
-	 * initializes linked list 
+	 * Constructor creates an object of MyLinkedList and initializes linked list
 	 */
 	public Stack() {
-		head = null;
+		this.head = null;
 	}
-	
 
 	/**
-	 * @param data - element to be added into the list
+	 * element to be added into the list
 	 * 
 	 */
 	public void push(T data) {
-		Node<T> node = new Node<T>();
-		node.data = data;
-		node.next=head;
-		head=node;
+		Node<T> node = new Node<T>(data);
+		node.next = head;
+		head = node;
 		count++;
 	}
-	
-	public void pop(){
-		if(head==null)
-		{
+
+	/*
+	 * to pop the data
+	 */
+	public void pop() {
+		if (head == null) {
 			System.out.println("Stack UnderFlow");
 			return;
 		}
-		Node<T> temp=head;
-		head=temp.next;
-		temp=null;
+		Node<T> temp = head;
+		head = temp.next;
+		temp = null;
 		count--;
 	}
-	
-	public T peek(){
-		if(head==null)
-		{
+
+	/*
+	 * peek the data
+	 */
+	public T peek() {
+		if (head == null) {
 			System.out.println("no data present");
 		}
-			T temp=head.data;
-			return temp;
+		T temp = head.data;
+		return temp;
 	}
-	
-	public boolean isEmpty(){
+
+	public boolean isEmpty() {
 		return count == 0 ? true : false;
 	}
-	
-	public int size(){
+
+	public int size() {
 		return count;
 	}
-	
+
 	public String display() {
 		Node<T> node = head;
-		String temp="";
-		
+		String temp = "";
+
 		while (node.next != null) {
-			temp += node.data+" ";
+			temp += node.data + " ";
 			node = node.next;
 		}
 		temp += node.data;
