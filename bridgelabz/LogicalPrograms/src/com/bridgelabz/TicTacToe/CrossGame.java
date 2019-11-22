@@ -5,6 +5,7 @@ import java.util.Scanner;
  * Player 1 take Random Cell that is the Column and Row.
  */
 public class CrossGame {
+	@SuppressWarnings({ "resource", "static-access" })
 	public static void main(String[ ] args) {
         
         TicTacToe t = new TicTacToe();
@@ -12,7 +13,7 @@ public class CrossGame {
         int x=0,y=0;
         do
         {
-            System.out.println(t.player==t.X?"Player X turn":"Player O turn");
+			System.out.println(t.player == t.X?"Player X turn":"Player O turn");
             System.out.println("Enter x and y places");
             x=s.nextInt();
             y=s.nextInt();
